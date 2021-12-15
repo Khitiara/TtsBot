@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://khitiara.github.io/TtsBotOptions"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="TtsBotOptions">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Guild">
+                    <xs:complexType>
+<!--                        <xs:sequence>-->
+<!--                            <xs:element maxOccurs="unbounded" minOccurs="0" name="LangMapping">-->
+<!--                                <xs:complexType>-->
+<!--                                    <xs:attribute name="lang" type="xs:string" use="required"/>-->
+<!--                                    <xs:attribute name="voice" type="xs:string" use="required"/>-->
+<!--                                </xs:complexType>-->
+<!--                            </xs:element>-->
+<!--                        </xs:sequence>-->
+                        <xs:attribute name="id" type="xs:unsignedLong" use="required"/>
+                        <xs:attribute name="fallbackVoice" type="xs:string" default="en-US-JennyNeural"/>
+                        <xs:attribute name="textChannel" type="xs:unsignedLong" use="required"/>
+                        <xs:attribute name="voiceChannel" type="xs:unsignedLong" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="discord" type="xs:string"/>
+            <xs:attribute name="azure" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>    
