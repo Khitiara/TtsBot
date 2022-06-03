@@ -76,7 +76,7 @@ namespace TtsBot
         [SuppressMessage("ReSharper", "UnusedParameter.Global")]
         public async Task SayAsync(CommandContext context, [RemainingText] string text) {
             if (context is not {
-                    Channel: { Type: ChannelType.Text } chan,
+                    Channel: { Type: ChannelType.Text or ChannelType.Voice, } chan,
                     Guild: { } guild,
                     User: DiscordMember user,
                     Message: { } message,
@@ -95,7 +95,7 @@ namespace TtsBot
         [SuppressMessage("ReSharper", "UnusedParameter.Global")]
         public async Task SayAsAsync(CommandContext context, string voice, [RemainingText] string text) {
             if (context is not {
-                    Channel: { Type: ChannelType.Text } chan,
+                    Channel: { Type: ChannelType.Text or ChannelType.Voice, } chan,
                     Guild: { } guild,
                     User: DiscordMember user,
                     Message: { } message,
@@ -111,9 +111,10 @@ namespace TtsBot
 
         [Command("say-in")]
         [SuppressMessage("ReSharper", "UnusedMember.Global")]
+        [SuppressMessage("ReSharper", "UnusedParameter.Global")]
         public async Task SayInAsync(CommandContext context, string lang, [RemainingText] string text) {
             if (context is not {
-                    Channel: { Type: ChannelType.Text } chan,
+                    Channel: { Type: ChannelType.Text or ChannelType.Voice, } chan,
                     Guild: { } guild,
                     User: DiscordMember user,
                     Message: { } message,

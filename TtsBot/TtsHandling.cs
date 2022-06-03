@@ -142,7 +142,7 @@ namespace TtsBot
             if (e is not {
                     Author: DiscordMember { IsBot: false } author,
                     Channel: {
-                        Type: ChannelType.Text,
+                        Type: ChannelType.Text or ChannelType.Voice,
                         Guild: { } guild
                     } channel,
                     Message: { } message
