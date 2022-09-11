@@ -19,18 +19,19 @@ using DiscordClient discordClient = new(new DiscordConfiguration {
     MinimumLogLevel = LogLevel.Debug,
     Intents = DiscordIntents.AllUnprivileged | DiscordIntents.GuildVoiceStates | DiscordIntents.GuildMembers |
               DiscordIntents.GuildMessages,
-    LoggerFactory = new LoggerFactory().AddSerilog()
+    LoggerFactory = new LoggerFactory().AddSerilog(),
+    GatewayCompressionLevel = GatewayCompressionLevel.None,
 });
 discordClient.UseVoiceNext(new VoiceNextConfiguration {
-    AudioFormat = new AudioFormat(48000, 2, VoiceApplication.Voice)
+    AudioFormat = new AudioFormat(48000, 2, VoiceApplication.Voice),
 });
 CommandsNextExtension commandsNext = discordClient.UseCommandsNext(new CommandsNextConfiguration {
-    UseDefaultCommandHandler = false
+    UseDefaultCommandHandler = false,
 });
 
 commandsNext.RegisterCommands<TtsCommandModule>();
 
-TtsHandling.Handling = new(discordClient, new AzureSpeechService());
+TtsHandling.Handling = new TtsHandling(discordClient, new AzureSpeechService());
 TtsHandling.Handling.Start();
 
 await discordClient.ConnectAsync();
