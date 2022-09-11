@@ -219,9 +219,18 @@ namespace TtsBot
             voice ??= registration.Voice;
 
             string nick = string.IsNullOrWhiteSpace(author.Nickname) ? author.Username : author.Nickname;
+            // Checking for links in the message and replacing them if necessary
+            List<string> toFilter = content.Split().ToList();
+            for (int i = 0; i < toFilter.Count; i++)
+            {
+                if (Uri.IsWellFormedUriString(toFilter[i], UriKind.Absolute))
+                    toFilter[i] = "link";
+            }
+            content = string.Join(" ", toFilter);
             if (content.Length > limit)
                 content = content[..limit];
             string nameSpeakable = EmojiOne.EmojiOne.ToShort($"{nick} says");
+            
             string textToSpeak = EmojiOne.EmojiOne.ToShort(content);
             IFluentSay fluentSay = new Ssml().Say(nameSpeakable).AsVoice("en-US-JennyNeural").Say(textToSpeak).AsVoice(voice);
             string ssml = await fluentSay
