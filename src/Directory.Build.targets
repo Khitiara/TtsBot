@@ -1,0 +1,19 @@
+<Project>
+    <Target Name="GitInfoStuff" DependsOnTargets="InitializeSourceControlInformation;$(SourceControlManagerUrlTranslationTargets)">
+        <PropertyGroup Condition="'$(SourceControlInformationFeatureSupported)' == 'true'">
+            <_ProjectRepositoryUrl Condition="'$(PublishRepositoryUrl)' == 'true'">$(PrivateRepositoryUrl)</_ProjectRepositoryUrl>
+        </PropertyGroup>
+    </Target>
+    <Target Name="ExtraThisAssemblyProps" DependsOnTargets="GetBuildVersion;GitInfoStuff" BeforeTargets="GenerateAssemblyNBGVVersionInfo">
+        <ItemGroup>
+            <AdditionalThisAssemblyFields Include="VersionThreeComponent" String="$(BuildVersion3Components)"/>
+            <AdditionalThisAssemblyFields Include="RepositoryUrl" String="$(_ProjectRepositoryUrl).git"/>
+            <AdditionalThisAssemblyFields Include="ProjectUrl" String="$(_ProjectRepositoryUrl)"/>
+        </ItemGroup>
+        <PropertyGroup>
+            <PackageProjectUrl Condition="'$(PackageProjectUrl)' == ''">$(_ProjectRepositoryUrl)</PackageProjectUrl>
+            <RepositoryUrl Condition="'$(RepositoryUrl)' == '' And '$(PublishRepositoryUrl)' == 'true'">$(_ProjectRepositoryUrl).git</RepositoryUrl>
+            <RepositoryCommit Condition="'$(GitCommitIdShort)' == ''">$(GitCommitIdShort)</RepositoryCommit>
+        </PropertyGroup>
+    </Target>
+</Project>

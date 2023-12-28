@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\robot\.nuget\packages\</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.8.0</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="C:\Users\robot\.nuget\packages\" />
+  </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)nerdbank.gitversioning\3.7.48-alpha\build\Nerdbank.GitVersioning.props" Condition="Exists('$(NuGetPackageRoot)nerdbank.gitversioning\3.7.48-alpha\build\Nerdbank.GitVersioning.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.sourcelink.common\1.1.1\build\Microsoft.SourceLink.Common.props" Condition="Exists('$(NuGetPackageRoot)microsoft.sourcelink.common\1.1.1\build\Microsoft.SourceLink.Common.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.build.tasks.git\1.1.1\build\Microsoft.Build.Tasks.Git.props" Condition="Exists('$(NuGetPackageRoot)microsoft.build.tasks.git\1.1.1\build\Microsoft.Build.Tasks.Git.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.sourcelink.github\1.1.1\build\Microsoft.SourceLink.GitHub.props" Condition="Exists('$(NuGetPackageRoot)microsoft.sourcelink.github\1.1.1\build\Microsoft.SourceLink.GitHub.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.sourcelink.bitbucket.git\1.1.1\build\Microsoft.SourceLink.Bitbucket.Git.props" Condition="Exists('$(NuGetPackageRoot)microsoft.sourcelink.bitbucket.git\1.1.1\build\Microsoft.SourceLink.Bitbucket.Git.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.sourcelink.azurerepos.git\1.1.1\build\Microsoft.SourceLink.AzureRepos.Git.props" Condition="Exists('$(NuGetPackageRoot)microsoft.sourcelink.azurerepos.git\1.1.1\build\Microsoft.SourceLink.AzureRepos.Git.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets\8.0.0\buildTransitive\net6.0\Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets\8.0.0\buildTransitive\net6.0\Microsoft.Extensions.Configuration.UserSecrets.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.cognitiveservices.speech\1.34.0\build\Microsoft.CognitiveServices.Speech.props" Condition="Exists('$(NuGetPackageRoot)microsoft.cognitiveservices.speech\1.34.0\build\Microsoft.CognitiveServices.Speech.props')" />
+    <Import Project="$(NuGetPackageRoot)dotnet.reproduciblebuilds\1.1.1\build\DotNet.ReproducibleBuilds.props" Condition="Exists('$(NuGetPackageRoot)dotnet.reproduciblebuilds\1.1.1\build\DotNet.ReproducibleBuilds.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgMicrosoft_VisualStudio_Threading_Analyzers Condition=" '$(PkgMicrosoft_VisualStudio_Threading_Analyzers)' == '' ">C:\Users\robot\.nuget\packages\microsoft.visualstudio.threading.analyzers\17.6.40</PkgMicrosoft_VisualStudio_Threading_Analyzers>
+    <PkgMicrosoft_SourceLink_Common Condition=" '$(PkgMicrosoft_SourceLink_Common)' == '' ">C:\Users\robot\.nuget\packages\microsoft.sourcelink.common\1.1.1</PkgMicrosoft_SourceLink_Common>
+    <PkgMicrosoft_Build_Tasks_Git Condition=" '$(PkgMicrosoft_Build_Tasks_Git)' == '' ">C:\Users\robot\.nuget\packages\microsoft.build.tasks.git\1.1.1</PkgMicrosoft_Build_Tasks_Git>
+    <PkgMicrosoft_SourceLink_GitLab Condition=" '$(PkgMicrosoft_SourceLink_GitLab)' == '' ">C:\Users\robot\.nuget\packages\microsoft.sourcelink.gitlab\1.1.1</PkgMicrosoft_SourceLink_GitLab>
+    <PkgMicrosoft_SourceLink_GitHub Condition=" '$(PkgMicrosoft_SourceLink_GitHub)' == '' ">C:\Users\robot\.nuget\packages\microsoft.sourcelink.github\1.1.1</PkgMicrosoft_SourceLink_GitHub>
+    <PkgMicrosoft_SourceLink_Bitbucket_Git Condition=" '$(PkgMicrosoft_SourceLink_Bitbucket_Git)' == '' ">C:\Users\robot\.nuget\packages\microsoft.sourcelink.bitbucket.git\1.1.1</PkgMicrosoft_SourceLink_Bitbucket_Git>
+    <PkgMicrosoft_SourceLink_AzureRepos_Git Condition=" '$(PkgMicrosoft_SourceLink_AzureRepos_Git)' == '' ">C:\Users\robot\.nuget\packages\microsoft.sourcelink.azurerepos.git\1.1.1</PkgMicrosoft_SourceLink_AzureRepos_Git>
+  </PropertyGroup>
+</Project>

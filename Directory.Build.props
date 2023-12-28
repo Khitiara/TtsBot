@@ -1,0 +1,12 @@
+﻿<Project>
+    <PropertyGroup>
+        <TargetFramework Condition="'$(TargetFramework)' == '' And '$(TargetFrameworks)' == ''">net8.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+        <ContinuousIntegrationBuild Condition="'$(CI)'=='true'">true</ContinuousIntegrationBuild>
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    </PropertyGroup>
+
+</Project>

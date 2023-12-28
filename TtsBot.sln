@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EFCA4342-4930-4B25-9DFA-27763383D824}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+		src\Directory.Build.targets = src\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9B2AE42C-D819-4FEB-B447-53C7DADA2743}"
+	ProjectSection(SolutionItems) = preProject
+		test\Directory.Build.props = test\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TtsBot", "src\TtsBot\TtsBot.csproj", "{D444F1E9-D8FC-4FE7-B303-C249D09552A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ext", "ext", "{D4A29229-6EF0-482C-942A-3807A7E6579E}"
+	ProjectSection(SolutionItems) = preProject
+		ext\Directory.Build.props = ext\Directory.Build.props
+		ext\Directory.Build.targets = ext\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{173D1B19-23D2-4CAF-83B5-6E5476D846CA}"
+	ProjectSection(SolutionItems) = preProject
+		build\PackageFiles.props = build\PackageFiles.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concentus", "ext\concentus\CSharp\Concentus\Concentus.csproj", "{D9AD6114-2FE4-44CA-AC8D-795AFD8C70EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D444F1E9-D8FC-4FE7-B303-C249D09552A0} = {EFCA4342-4930-4B25-9DFA-27763383D824}
+		{D9AD6114-2FE4-44CA-AC8D-795AFD8C70EF} = {D4A29229-6EF0-482C-942A-3807A7E6579E}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D444F1E9-D8FC-4FE7-B303-C249D09552A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D444F1E9-D8FC-4FE7-B303-C249D09552A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D444F1E9-D8FC-4FE7-B303-C249D09552A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D444F1E9-D8FC-4FE7-B303-C249D09552A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9AD6114-2FE4-44CA-AC8D-795AFD8C70EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9AD6114-2FE4-44CA-AC8D-795AFD8C70EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9AD6114-2FE4-44CA-AC8D-795AFD8C70EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9AD6114-2FE4-44CA-AC8D-795AFD8C70EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

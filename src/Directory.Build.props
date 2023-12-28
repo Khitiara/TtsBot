@@ -1,0 +1,21 @@
+<Project>
+    <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))"/>
+
+    <PropertyGroup>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="DotNet.ReproducibleBuilds" PrivateAssets="All" Version="1.1.1"/>
+        <PackageReference Include="Nerdbank.GitVersioning"
+                          Version="3.7.48-alpha"
+                          PrivateAssets="all"/>
+    </ItemGroup>
+
+    <PropertyGroup>
+        <GitVersionBaseDirectory>$(MSBuildThisFileDirectory)\..</GitVersionBaseDirectory>
+        <NBGV_ThisAssemblyIncludesPackageVersion>true</NBGV_ThisAssemblyIncludesPackageVersion>
+    </PropertyGroup>
+
+    <Import Project="$(MSBuildThisFileDirectory)\..\build\PackageFiles.props"/>
+</Project>

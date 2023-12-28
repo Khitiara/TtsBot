@@ -1,0 +1,38 @@
+<Project>
+    <PropertyGroup>
+        <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="$(MSBuildThisFileDirectory)\..\LICENSE" Pack="true" PackagePath=""/>
+    </ItemGroup>
+
+
+    <Choose>
+        <When Condition="Exists('$(MSBuildProjectDirectory)\README.md')">
+            <!-- Include the project readme if it exists -->
+            <ItemGroup>
+                <None Include="$(MSBuildProjectDirectory)\README.md" Pack="true" PackagePath=""/>
+            </ItemGroup>
+        </When>
+        <Otherwise>
+            <!-- Include the sln readme if project doesnt have its own -->
+            <ItemGroup>
+                <None Include="$(MSBuildThisFileDirectory)\..\README.md" Pack="true" PackagePath=""/>
+            </ItemGroup>
+        </Otherwise>
+    </Choose>
+
+    <Choose>
+        <When Condition="Exists('$(MSBuildThisFileDirectory)\..\icon.png')">
+            <PropertyGroup>
+                <PackageIcon>icon.png</PackageIcon>
+            </PropertyGroup>
+            <ItemGroup>
+                <None Include="$(MSBuildThisFileDirectory)\..\icon.png" Pack="true" PackagePath=""/>
+            </ItemGroup>
+        </When>
+        <Otherwise/>
+    </Choose>
+</Project>
